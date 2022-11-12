@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -17,6 +19,7 @@ public class DashBoardActivity extends AppCompatActivity {
     int index=0;
     TextView questionCard,optionA,optionB,optionC,optionD;
     CardView cardQuestion,cardQuestionA,cardQuestionB,cardQuestionC,cardQuestionD;
+    LinearLayout nextBtn;
     public static ArrayList<ModelClass> list;
 
     @Override
@@ -29,6 +32,16 @@ public class DashBoardActivity extends AppCompatActivity {
         Collections.shuffle(list);
         modelClass=list.get(index);
         setData();
+
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                index++;
+                modelClass=list.get(index);
+                setData();
+
+            }
+        });
     }
 
     private ArrayList<ModelClass> getData()
@@ -68,6 +81,12 @@ public class DashBoardActivity extends AppCompatActivity {
         cardQuestionB=findViewById(R.id.Card_optionB);
         cardQuestionC=findViewById(R.id.Card_optionC);
         cardQuestionD=findViewById(R.id.Card_optionD);
+        nextBtn=findViewById(R.id.nextBtn);
+
+    }
+
+    private void nextBtnClick()
+    {
 
     }
 }
