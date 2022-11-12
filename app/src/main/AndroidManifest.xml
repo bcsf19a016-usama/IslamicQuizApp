@@ -12,10 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IslamicQuizApp"
         tools:targetApi="31">
+
         <activity
             android:name=".MainActivity"
-            android:label="Islamic Quiz App"
-            android:exported="true">
+            android:exported="true"
+            android:label="Islamic Quiz App">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
