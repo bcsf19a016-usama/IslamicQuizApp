@@ -87,7 +87,8 @@
         android:layout_marginEnd="@dimen/_20sdp"
         android:layout_marginRight="@dimen/_10sdp"
         app:cardBackgroundColor="#878080"
-        app:cardCornerRadius="@dimen/_10sdp">
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:onClick="optionAClick">
 
         <TextView
             android:layout_width="wrap_content"
@@ -110,7 +111,8 @@
         android:layout_marginEnd="@dimen/_20sdp"
         android:layout_marginRight="@dimen/_10sdp"
         app:cardBackgroundColor="#878080"
-        app:cardCornerRadius="@dimen/_10sdp">
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:onClick="optionBClick">
 
         <TextView
             android:layout_width="wrap_content"
@@ -132,7 +134,8 @@
         android:layout_marginEnd="@dimen/_20sdp"
         android:layout_marginRight="@dimen/_10sdp"
         app:cardBackgroundColor="#878080"
-        app:cardCornerRadius="@dimen/_10sdp">
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:onClick="optionCClick">
 
         <TextView
             android:id="@+id/optionC"
@@ -153,7 +156,8 @@
         android:layout_marginEnd="@dimen/_20sdp"
         android:layout_marginRight="@dimen/_10sdp"
         app:cardBackgroundColor="#878080"
-        app:cardCornerRadius="@dimen/_10sdp">
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:onClick="optionDClick">
 
         <TextView
             android:layout_width="wrap_content"

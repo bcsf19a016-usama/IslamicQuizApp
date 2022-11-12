@@ -22,6 +22,11 @@ public class DashBoardActivity extends AppCompatActivity {
     LinearLayout nextBtn;
     public static ArrayList<ModelClass> list;
 
+    List<List<String>> userAnswer = new ArrayList<>();
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +41,8 @@ public class DashBoardActivity extends AppCompatActivity {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                enableButtons();
+                restColour();
                 index++;
                 modelClass=list.get(index);
                 setData();
@@ -85,8 +92,77 @@ public class DashBoardActivity extends AppCompatActivity {
 
     }
 
-    private void nextBtnClick()
+    public void optionAClick(View view)
     {
+        List<String> list = new ArrayList<>();
+
+        list.add(String.valueOf(modelClass.getQuestion()));
+        list.add(String.valueOf(optionA.getText()));
+        list.add(modelClass.getAnswer());
+        userAnswer.add(list);
+        cardQuestionA.setCardBackgroundColor(getResources().getColor(R.color.white));
+        disableButtons();
+        System.out.println(userAnswer.get(0).get(0));
+
+
+
+    }
+    public void optionBClick(View view)
+    {
+        List<String> list = new ArrayList<>();
+
+        list.add(String.valueOf(modelClass.getQuestion()));
+        list.add(String.valueOf(optionA.getText()));
+        list.add(modelClass.getAnswer());
+        cardQuestionB.setCardBackgroundColor(getResources().getColor(R.color.white));
+        disableButtons();
+
+    }
+    public void optionCClick(View view)
+    {
+        List<String> list = new ArrayList<>();
+
+        list.add(String.valueOf(modelClass.getQuestion()));
+        list.add(String.valueOf(optionA.getText()));
+        list.add(modelClass.getAnswer());
+        cardQuestionB.setCardBackgroundColor(getResources().getColor(R.color.white));
+
+        disableButtons();
+
+    }
+    public void optionDClick(View view)
+    {
+        List<String> list = new ArrayList<>();
+
+        list.add(String.valueOf(modelClass.getQuestion()));
+        list.add(String.valueOf(optionA.getText()));
+        list.add(modelClass.getAnswer());
+        cardQuestionD.setCardBackgroundColor(getResources().getColor(R.color.white));
+        disableButtons();
+
+    }
+    public void enableButtons()
+    {
+        cardQuestionA.setClickable(true);
+        cardQuestionB.setClickable(true);
+        cardQuestionC.setClickable(true);
+        cardQuestionD.setClickable(true);
+    }
+
+    public void disableButtons()
+    {
+        cardQuestionA.setClickable(false);
+        cardQuestionB.setClickable(false);
+        cardQuestionC.setClickable(false);
+        cardQuestionD.setClickable(false);
+    }
+
+    public void restColour()
+    {
+        cardQuestionA.setCardBackgroundColor(getResources().getColor(R.color.appBtnColor));
+        cardQuestionB.setCardBackgroundColor(getResources().getColor(R.color.appBtnColor));
+        cardQuestionC.setCardBackgroundColor(getResources().getColor(R.color.appBtnColor));
+        cardQuestionD.setCardBackgroundColor(getResources().getColor(R.color.appBtnColor));
 
     }
 }
