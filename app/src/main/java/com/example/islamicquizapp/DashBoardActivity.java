@@ -16,14 +16,13 @@ import java.util.List;
 
 public class DashBoardActivity extends AppCompatActivity {
 
-    List<ModelClass> questions;
     ModelClass modelClass;
+    public static int marks=0;
     int index=0;
     TextView questionCard,optionA,optionB,optionC,optionD;
-    CardView cardQuestion,cardQuestionA,cardQuestionB,cardQuestionC,cardQuestionD;
+    CardView cardQuestionA,cardQuestionB,cardQuestionC,cardQuestionD;
     LinearLayout nextBtn;
-    public static ArrayList<ModelClass> list;
-
+    ArrayList<ModelClass> list;
     public static List<List<String>> userAnswer = new ArrayList<>();
 
 
@@ -103,7 +102,10 @@ public class DashBoardActivity extends AppCompatActivity {
     public void optionAClick(View view)
     {
         List<String> list = new ArrayList<>();
-
+        if (optionA.getText()==modelClass.getAnswer())
+        {
+            marks++;
+        }
         list.add(String.valueOf(modelClass.getQuestion()));
         list.add(String.valueOf(optionA.getText()));
         list.add(modelClass.getAnswer());
@@ -118,10 +120,14 @@ public class DashBoardActivity extends AppCompatActivity {
     public void optionBClick(View view)
     {
         List<String> list = new ArrayList<>();
-
+        if (optionB.getText()==modelClass.getAnswer())
+        {
+            marks++;
+        }
         list.add(String.valueOf(modelClass.getQuestion()));
-        list.add(String.valueOf(optionA.getText()));
+        list.add(String.valueOf(optionB.getText()));
         list.add(modelClass.getAnswer());
+        userAnswer.add(list);
         cardQuestionB.setCardBackgroundColor(getResources().getColor(R.color.white));
         disableButtons();
 
@@ -129,11 +135,15 @@ public class DashBoardActivity extends AppCompatActivity {
     public void optionCClick(View view)
     {
         List<String> list = new ArrayList<>();
-
+        if (optionC.getText()==modelClass.getAnswer())
+        {
+            marks++;
+        }
         list.add(String.valueOf(modelClass.getQuestion()));
-        list.add(String.valueOf(optionA.getText()));
+        list.add(String.valueOf(optionC.getText()));
         list.add(modelClass.getAnswer());
-        cardQuestionB.setCardBackgroundColor(getResources().getColor(R.color.white));
+        userAnswer.add(list);
+        cardQuestionC.setCardBackgroundColor(getResources().getColor(R.color.white));
 
         disableButtons();
 
@@ -141,10 +151,14 @@ public class DashBoardActivity extends AppCompatActivity {
     public void optionDClick(View view)
     {
         List<String> list = new ArrayList<>();
-
+        if (optionD.getText()==modelClass.getAnswer())
+        {
+            marks++;
+        }
         list.add(String.valueOf(modelClass.getQuestion()));
-        list.add(String.valueOf(optionA.getText()));
+        list.add(String.valueOf(optionD.getText()));
         list.add(modelClass.getAnswer());
+        userAnswer.add(list);
         cardQuestionD.setCardBackgroundColor(getResources().getColor(R.color.white));
         disableButtons();
 

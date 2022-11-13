@@ -8,5 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="appBtnColor">#878080</color>
+    <color name="green">#50A653</color>
+    <color name="red">#AE3939</color>
+
 
 </resources>
