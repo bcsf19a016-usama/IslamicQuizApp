@@ -3,7 +3,9 @@ package com.example.islamicquizapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -22,7 +24,7 @@ public class DashBoardActivity extends AppCompatActivity {
     LinearLayout nextBtn;
     public static ArrayList<ModelClass> list;
 
-    List<List<String>> userAnswer = new ArrayList<>();
+    public static List<List<String>> userAnswer = new ArrayList<>();
 
 
 
@@ -41,11 +43,17 @@ public class DashBoardActivity extends AppCompatActivity {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                enableButtons();
-                restColour();
-                index++;
-                modelClass=list.get(index);
-                setData();
+                if (index<list.size()-1) {
+                    enableButtons();
+                    restColour();
+                    index++;
+                    modelClass = list.get(index);
+                    setData();
+                }
+                else {
+
+                    setEndActivity();
+                }
 
             }
         });
@@ -165,4 +173,13 @@ public class DashBoardActivity extends AppCompatActivity {
         cardQuestionD.setCardBackgroundColor(getResources().getColor(R.color.appBtnColor));
 
     }
+
+    public void setEndActivity()
+    {
+        Intent intent = new Intent(DashBoardActivity.this, EndActivity.class);
+        Bundle bundle = new Bundle();
+        this.startActivity(intent);
+
+    }
+
 }
